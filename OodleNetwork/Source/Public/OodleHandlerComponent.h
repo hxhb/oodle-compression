@@ -365,6 +365,10 @@ public:
 
 	virtual void NotifyAnalyticsProvider() override;
 
+	// ++fix error less 4.27
+	virtual void OutgoingConnectionless(const TSharedPtr<const FInternetAddr>& Address, FBitWriter& Packet, FOutPacketTraits& Traits) override;
+	virtual void IncomingConnectionless(const TSharedPtr<const FInternetAddr>& Address, FBitReader& Packet) override;
+	// ++end
 
 protected:
 	/** Whether or not Oodle, and its additions to the packet protocol, are enabled */

@@ -1395,6 +1395,17 @@ void OodleHandlerComponent::NotifyAnalyticsProvider()
 	bOodleAnalytics = NetAnalyticsData.IsValid();
 }
 
+// ++fix error less 4.27
+void OodleHandlerComponent::OutgoingConnectionless(const TSharedPtr<const FInternetAddr>& Address, FBitWriter& Packet,
+	FOutPacketTraits& Traits)
+{
+}
+
+void OodleHandlerComponent::IncomingConnectionless(const TSharedPtr<const FInternetAddr>& Address, FBitReader& Packet)
+{
+}
+// ++end
+
 #if !UE_BUILD_SHIPPING
 /**
  * Exec Interface
